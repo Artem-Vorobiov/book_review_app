@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+gem "paperclip"
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'devise'
@@ -32,3 +33,4 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
