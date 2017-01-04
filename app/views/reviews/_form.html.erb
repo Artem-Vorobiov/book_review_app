@@ -1,0 +1,7 @@
+<%= simple_form_for ([@book, @book.reviews.build]) do |f| %>
+  
+  <%= f.input :raiting %>
+  <%= f.input :comment %>
+  <%= f.submit %>
+
+<% end %>
