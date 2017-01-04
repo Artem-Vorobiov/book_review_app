@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
   before_action :find_book, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
 
   def index
     if params[:category].blank?
@@ -28,8 +29,13 @@ class BooksController < ApplicationController
     end
   end
 
-  def show  
-  end
+  def show
+    if @book.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @book.reviews.average(:raiting).round(2)
+    end
+end
 
   def edit
     @categories = Category.all.map{ |c| [c.name, c.id] }
