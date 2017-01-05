@@ -29,6 +29,7 @@ gem "paperclip"
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'letter_opener'
 
 group :development, :test do
   gem 'byebug', platform: :mri
