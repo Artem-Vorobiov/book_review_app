@@ -21,8 +21,10 @@ class BooksController < ApplicationController
   def create
     @book = current_user.books.build(book_params)
     @book.category_id = params[:category_id]
+    @email = current_user.email
     #@book = Book.create(book_params)
     if @book.save
+      BookMailer.book_added(@email).deliver
       redirect_to book_path(@book)
     else
       render "new"
