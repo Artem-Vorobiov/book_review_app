@@ -5,9 +5,10 @@ class BookMailer < ApplicationMailer
   #
   #   en.book_mailer.book_added.subject
   #
-  def book_added(email)
+  def book_added(email, book)
     @email = email
+    @book  = book
 
-    mail to: @email, subject: "Bood added"
+    mail to: @email, subject: "Thanks for added book/"
   end
 end

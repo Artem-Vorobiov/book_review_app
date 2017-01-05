@@ -24,7 +24,7 @@ class BooksController < ApplicationController
     @email = current_user.email
     #@book = Book.create(book_params)
     if @book.save
-      BookMailer.book_added(@email).deliver
+      BookMailer.book_added(@email, @book).deliver
       redirect_to book_path(@book)
     else
       render "new"
